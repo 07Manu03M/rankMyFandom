@@ -6,7 +6,6 @@
   padding: 0;
 }
 
-
 /********************************** Caja de banner **********************************/
 
 .cajamain {
@@ -20,8 +19,10 @@
 
 /******************************** imagen del banner ********************************/
 
-.cajamain img {
-  width: 1840px;
+.banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* recorta y ajusta como background-size: cover */
 }
 
 /*********************************** informacion **********************************/
@@ -51,7 +52,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   justify-content: space-evenly;
   text-align: center;
   border: 5px rgba(255, 255, 255, 0.178) solid;
@@ -64,14 +64,12 @@
 }
 
 .textoylogo h1 {
-  /* border: 2px solid green; */
   color: white;
   font-family: "Manrope-Bold";
   font-size: 35px;
 }
 
 .textoylogo p {
-  /* border: 2px solid yellow;  */
   font-family: "Marope-Regular";
   color: white;
   font-size: 15px;
@@ -103,20 +101,16 @@
     height: 75%;
   }
   .textoylogo h1 {
-    /* border: 2px solid green; */
-    color: white;
     font-family: "Manrope-Bold";
     font-size: 31px;
   }
 
   .textoylogo p {
-    /* border: 2px solid yellow;  */
     font-family: "Marope-Regular";
     color: white;
     width: 95%;
     font-size: 16px;
     margin: 0 10px;
-
   }
 }
 
@@ -129,64 +123,41 @@
   }
 
   .textoylogo img {
-    /* border: 2px solid blue; */
-    color: white;
     max-width: 100px;
   }
 
   .textoylogo h1 {
-    /* border: 2px solid green; */
-    color: white;
     font-family: "Manrope-Bold";
     font-size: 20px;
   }
 
   .textoylogo p {
-    /* border: 2px solid yellow;  */
     font-family: "Marope-Regular";
-    color: white;
     font-size: 10px;
     margin: 0 10px;
-
   }
 
   .textoylogo button {
-    background: transparent;
-    border: 2px solid white;
-    color: white;
     padding: 5px 10px;
     border-radius: 10px;
-    cursor: pointer;
-    transition: background 0.3s;
     font-family: "Manrope-Semibold";
     font-size: 10px;
-  }
-
-  .textoylogo button:hover {
-    background: white;
-    color: black;
   }
 }
 
 /* DESING RESPONSIVE PHONE M */
 @media screen and (min-width: 351px) and (max-width: 400px){
   .textoylogo {
-    /* border: 2px solid orange; */
     width: 85%;
     height: 55%;
     align-items: center;
-    
   }
 
   .textoylogo img {
-    /* border: 2px solid blue; */
-    color: white;
     max-width: 100px;
   }
 
   .textoylogo h1 {
-    /* border: 2px solid green; */
-    color: white;
     font-family: "Manrope-Bold";
     font-size: 20px;
     margin: 0 10px;
@@ -195,9 +166,7 @@
   }
 
   .textoylogo p {
-    /* border: 2px solid yellow;  */
     font-family: "Marope-Regular";
-    color: white;
     font-size: 10px;
     margin: 0 10px;
     width: 90%;
@@ -205,41 +174,26 @@
   }
 
   .textoylogo button {
-    background: transparent;
-    border: 2px solid white;
-    color: white;
     padding: 5px 10px;
     border-radius: 10px;
-    cursor: pointer;
-    transition: background 0.3s;
     font-family: "Manrope-Semibold";
     font-size: 10px;
   }
-
-  .textoylogo button:hover {
-    background: white;
-    color: black;
-  }
 }
+
 /* DESING RESPONSIVE PHONE L */
 @media screen and (min-width: 401px) and (max-width: 440px){
   .textoylogo {
-    /* border: 2px solid orange; */
     width: 75%;
     height: 55%;
     align-items: center;
-    
   }
 
   .textoylogo img {
-    /* border: 2px solid blue; */
-    color: white;
     max-width: 100px;
   }
 
   .textoylogo h1 {
-    /* border: 2px solid green; */
-    color: white;
     font-family: "Manrope-Bold";
     font-size: 25px;
     margin: 0 10px;
@@ -248,9 +202,7 @@
   }
 
   .textoylogo p {
-    /* border: 2px solid yellow;  */
     font-family: "Marope-Regular";
-    color: white;
     font-size: 12px;
     margin: 0 10px;
     width: 95%;
@@ -258,45 +210,31 @@
   }
 
   .textoylogo button {
-    background: transparent;
-    border: 2px solid white;
-    color: white;
     padding: 5px 10px;
     border-radius: 10px;
-    cursor: pointer;
-    transition: background 0.3s;
     font-family: "Manrope-Semibold";
     font-size: 10px;
-  }
-
-  .textoylogo button:hover {
-    background: white;
-    color: black;
   }
 }
 
 /* DESING RESPONSIVE TABLET */
 @media screen and (min-width: 441px) and (max-width: 1114px){
-  .cajamain img {
-  width: 2400px;
- }
+  .banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
   .textoylogo {
-    /* border: 2px solid orange; */
     width: 55%;
     height: 55%;
     align-items: center;
-    
   }
 
   .textoylogo img {
-    /* border: 2px solid blue; */
-    color: white;
     max-width: 150px;
   }
 
   .textoylogo h1 {
-    /* border: 2px solid green; */
-    color: white;
     font-family: "Manrope-Bold";
     font-size: 30px;
     margin: 0 10px;
@@ -305,28 +243,17 @@
   }
 
   .textoylogo p {
-    /* border: 2px solid yellow;  */
     font-family: "Marope-Regular";
-    color: white;
     font-size: 14px;
     width: 95%;
     margin-left: 2.5%;
   }
 
   .textoylogo button {
-    background: transparent;
-    border: 2px solid white;
-    color: white;
     padding: 10px 15px;
     border-radius: 10px;
-    cursor: pointer;
-    transition: background 0.3s;
     font-family: "Manrope-Semibold";
     font-size: 15px;
   }
-
-  .textoylogo button:hover {
-    background: white;
-    color: black;
-  }
 }
+
