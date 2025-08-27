@@ -1,3 +1,18 @@
 :root{
   --color-1: #ffffff;
 }
+
+@font-face {
+  font-family: "Manrope-Bold";
+  src: url("../storage/font/Manrope/static/Manrope-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Marope-Regular";
+  src: url("../storage/font/Manrope/static/Manrope-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Manrope-Semibold";
+  src: url("../storage/font/Manrope/static/Manrope-SemiBold.ttf");
+}
