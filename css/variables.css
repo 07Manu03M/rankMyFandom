@@ -16,3 +16,7 @@
   font-family: "Manrope-Semibold";
   src: url("../storage/font/Manrope/static/Manrope-SemiBold.ttf");
 }
+@font-face {
+  font-family: "letra-righteous";
+  src: url("../storage/font/Righteous/Righteous-Regular.ttf");
+}

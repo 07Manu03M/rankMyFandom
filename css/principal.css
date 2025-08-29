@@ -1,0 +1,52 @@
+@import url(variables.css);
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.menu_header {
+    border: 2px red solid;
+    display: flex;
+    justify-content: space-around;
+}
+.logotipado {
+    border: 2px rgb(255, 174, 0) solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logotipado img{
+    border: 2px rgb(145, 255, 0) solid;
+    max-width: 50px;
+}
+.logotipado h1{
+    border: 2px rgb(0, 255, 191) solid;
+    font-family: "letra-righteous";
+    font-size: 20px;
+}
+.opciones_menu {
+    border: 2px rgb(0, 153, 255) solid;
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.opciones_menu span{
+    border: 2px rgb(38, 0, 255) solid;
+    font-family: "Marope-Regular";
+    width: 20%;
+    text-align: center;
+}
+.opcion_notificacion {
+    border: 2px rgb(153, 0, 255) solid;
+    width: 6%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.opcion_notificacion img{
+    border: 2px rgb(255, 123, 0) solid;
+    max-width: 40px;
+}
