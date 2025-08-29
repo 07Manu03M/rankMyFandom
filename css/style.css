@@ -121,7 +121,9 @@
     height: 75%;
     align-items: center;
   }
-
+  .cajainformation{
+    box-shadow: inset 0 0 100px 30px rgb(0, 0, 0);
+  }
   .textoylogo img {
     max-width: 100px;
   }
@@ -146,13 +148,15 @@
 }
 
 /* DESING RESPONSIVE PHONE M */
-@media screen and (min-width: 351px) and (max-width: 400px){
+@media screen and (min-width: 351px) and (max-width: 400px) {
   .textoylogo {
     width: 85%;
     height: 55%;
     align-items: center;
   }
-
+  .cajainformation{
+    box-shadow: inset 0 0 150px 40px rgb(0, 0, 0);
+  }
   .textoylogo img {
     max-width: 100px;
   }
@@ -182,11 +186,14 @@
 }
 
 /* DESING RESPONSIVE PHONE L */
-@media screen and (min-width: 401px) and (max-width: 440px){
+@media screen and (min-width: 401px) and (max-width: 440px) {
   .textoylogo {
     width: 75%;
     height: 55%;
     align-items: center;
+  }
+  .cajainformation{
+    box-shadow: inset 0 0 150px 50px rgb(0, 0, 0);
   }
 
   .textoylogo img {
@@ -218,11 +225,14 @@
 }
 
 /* DESING RESPONSIVE TABLET */
-@media screen and (min-width: 441px) and (max-width: 1114px){
+@media screen and (min-width: 441px) and (max-width: 1114px) {
   .banner-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+  .cajainformation{
+    box-shadow: inset 0 0 150px 80px rgb(0, 0, 0);
   }
   .textoylogo {
     width: 55%;
