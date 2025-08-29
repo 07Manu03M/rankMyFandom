@@ -79,7 +79,7 @@
 .textoylogo input {
   /* border: 2px red solid; */
   width: 85%;
-  height: 6%;
+  height: 8%;
   border-radius: 5px;
   background: #0000006b;
   border: 2px #b9b9b9 solid;
@@ -125,7 +125,7 @@
   .textoylogo img {
     /* border: 2px solid blue; */
     color: white;
-    max-width: 150px;
+    min-width: 120px;
   }
 
   .textoylogo h1 {

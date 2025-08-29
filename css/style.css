@@ -22,7 +22,8 @@
 .banner-img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* recorta y ajusta como background-size: cover */
+  object-fit: cover;
+  /* recorta y ajusta como background-size: cover */
 }
 
 /*********************************** informacion **********************************/
@@ -97,12 +98,18 @@
 
 @media screen and (min-width: 1024px) and (max-width: 1920px) {
   .textoylogo {
-    width: 35%;
+    width: 30%;
     height: 75%;
+  }
+  .textoylogo img {
+    /* border: 2px solid blue; */
+    color: white;
+    max-width: 200px;
   }
   .textoylogo h1 {
     font-family: "Manrope-Bold";
-    font-size: 31px;
+    font-size: 30px;
+    width: 80%;
   }
 
   .textoylogo p {
@@ -121,9 +128,11 @@
     height: 75%;
     align-items: center;
   }
-  .cajainformation{
+
+  .cajainformation {
     box-shadow: inset 0 0 100px 30px rgb(0, 0, 0);
   }
+
   .textoylogo img {
     max-width: 100px;
   }
@@ -154,9 +163,11 @@
     height: 55%;
     align-items: center;
   }
-  .cajainformation{
+
+  .cajainformation {
     box-shadow: inset 0 0 150px 40px rgb(0, 0, 0);
   }
+
   .textoylogo img {
     max-width: 100px;
   }
@@ -192,7 +203,8 @@
     height: 55%;
     align-items: center;
   }
-  .cajainformation{
+
+  .cajainformation {
     box-shadow: inset 0 0 150px 50px rgb(0, 0, 0);
   }
 
@@ -231,9 +243,11 @@
     height: 100%;
     object-fit: cover;
   }
-  .cajainformation{
+
+  .cajainformation {
     box-shadow: inset 0 0 150px 80px rgb(0, 0, 0);
   }
+
   .textoylogo {
     width: 55%;
     height: 55%;
@@ -266,4 +280,3 @@
     font-size: 15px;
   }
 }
-
