@@ -11,6 +11,10 @@
   font-family: "Marope-Regular";
   src: url("../storage/font/Manrope/static/Manrope-Regular.ttf");
 }
+@font-face {
+  font-family: "Marope-Medium";
+  src: url("../storage/font/Manrope/static/Manrope-Medium.ttf");
+}
 
 @font-face {
   font-family: "Manrope-Semibold";
