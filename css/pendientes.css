@@ -57,7 +57,7 @@ body {
     text-decoration: none;
 }
 
-.opciones_menu a:nth-child(1) {
+.opciones_menu a:nth-child(2) {
     background: #242424;
     padding: 10px;
     border-radius: 10px;
@@ -250,9 +250,6 @@ main img {
   background:#222;
   transition: transform .25s ease;
 }
-.caja_tendencias:hover {
-  transform: scale(1.05);
-}
 
 .banner-peli {
     /* border: 2px rgb(255, 255, 0) solid; */
@@ -296,67 +293,62 @@ main img {
     border-bottom-right-radius: 10px;
 }
 
-.likes_dislikes {
-    /* border: 2px rgb(153, 0, 255) solid; */
+.aceptar_propuesta {
+    background: #171717;
+    border: 2px rgb(67, 67, 67) solid;
+    /* padding: 5px; */
     display: flex;
-    width: 65%;
-    justify-content: space-between;
+    height: 40px;
+    width: 45%;
+    justify-content: center;
 }
-
-.likes {
-    /* border: 2px rgb(0, 123, 255) solid; */
+.boton_aceptacion {
+    background: #171717;
+    border: none;
+    /* border: 2px rgb(255, 179, 0) solid; */
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
-.likes img {
-    /* border: 2px rgb(255, 0, 204) solid; */
-    max-width: 30px;
+.boton_aceptacion img{
+    /* border: 2px rgb(225, 255, 0) solid; */
+    max-width: 30%;
 }
-
-.likes p {
-    /* border: 2px rgb(136, 0, 255) solid; */
+.boton_aceptacion p{
+    /* border: 2px rgb(64, 255, 0) solid; */
+    width: 70%;
     color: white;
+    
 }
-
-.dislikes {
-    /* border: 2px rgb(0, 8, 255) solid; */
+.rechar_propuesta {
+    /* border: 2px rgb(0, 255, 234) solid; */
     display: flex;
+    height: 40px;
+    /* padding: 5px; */
+    background: #171717;
+    width: 45%;
+    justify-content: center;
+    border: 2px rgb(67, 67, 67) solid;
+}
+.boton_rechazo {
+    /* border: 2px rgb(0, 162, 255) solid; */
     display: flex;
+    background: #171717;
     justify-content: center;
     align-items: center;
+    border: none;
+    
 }
-
-.dislikes img {
-    /* border: 2px rgb(29, 45, 137) solid; */
-    max-width: 30px;
+.boton_rechazo img{
+    /* border: 2px rgb(119, 0, 255) solid; */
+    max-width: 27%;
 }
-
-.dislikes p {
-    /* border: 2px rgb(87, 206, 111) solid; */
+.boton_rechazo p{
+    /* border: 2px rgb(255, 0, 242) solid; */
+    width: 70%;
     color: white;
 }
 
-.comentarios {
-    /* border: 2px rgb(88, 11, 51) solid; */
-    display: flex;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 25%;
-    justify-content: space-between;
-}
-
-.comentarios img {
-    /* border: 2px rgb(86, 135, 153) solid; */
-    max-width: 30px;
-}
-
-.comentarios p {
-    /* border: 2px rgb(22, 114, 17) solid; */
-    color: white;
-}
 
 .flecha {
   position: absolute;
