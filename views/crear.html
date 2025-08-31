@@ -25,8 +25,45 @@
             <img src="../storage/img/campanita.svg" alt="">
         </div>
     </header>
-    <main>
-        
+    <main class="caja_main">
+        <div class="caja_principal">
+            <div class="input_titulo">
+                <h5>Titulo de la Funcion</h5>
+                <input type="text" placeholder="Titulo de la Funcion">
+            </div>
+            <div class="input_descripcion">
+                <h5>Descripcion de la Funcion</h5>
+                <input type="text" placeholder="Descripcion de la Funcion">
+            </div>
+            <div class="input_fecha">
+                <h5>Fecha de la Funcion</h5>
+                <input type="date" placeholder="Fecha de la Funcion">
+            </div>
+            <div class="input_categoria">
+                <h5 for="categoria">Selecciona una opcion:</h5>
+                <select id="categoria" name="categoria">
+                    <option value="Seleccionar">Seleccione una opcion</option>
+                    <option value="Pelicula">Pelicula</option>
+                    <option value="Serie">Serie</option>
+                </select>
+            </div>
+            <div class="input_subcategoria">
+                <h5 for="categorias">Seleccione una categoria</h5>
+                <select id="categorias" name="categorias">
+                    <option value="Seleccionar">Seleccione una opcion</option>
+                    <option value="Accion">Accion</option>
+                    <option value="Comedia">Comedia</option>
+                    <option value="Drama">Drama</option>
+                </select>
+            </div>
+            <div class="input_imagen">
+                <h5>Imagen de la Funcion</h5>
+                <input type="file" id="fileInput">
+            </div>
+            <div class="input_boton">
+                <button>Crear</button>
+            </div>
+        </div>
     </main>
 </body>
 

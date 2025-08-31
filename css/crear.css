@@ -76,3 +76,198 @@ body {
     max-width: 40px;
 }
 
+/* FORMULARIO */
+
+.caja_main{
+    /* border: 2px red solid; */
+    width: 65%;
+    height: 150vh;
+    margin: auto;
+    margin-top: 70px;
+    margin-bottom: 40px;
+    padding: 20px;
+    background: #2f2f2f;
+    border-radius: 25px;
+    
+}
+.caja_principal{
+    /* border: 2px blue solid; */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.input_titulo {
+    /* border: 2px rgb(41, 41, 41) solid; */
+    width: 90%;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.input_titulo h5{
+    color: white;
+    font-size: 25px;
+    font-family: "Marope-Regular";
+}
+.input_titulo input{
+    /* border: 2px rgb(41, 41, 41) solid; */
+    border: none;
+    height: 35px;
+    padding: 10px;
+    border-radius: 10px;
+}
+.input_descripcion {
+    /* border: 2px rgb(128, 79, 0) solid; */
+    width: 90%;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.input_descripcion h5{
+    /* border: 2px rgb(128, 79, 0) solid; */
+    color: white;
+    font-size: 25px;
+    font-family: "Marope-Regular";
+}
+.input_descripcion input{
+    /* border: 2px rgb(208, 255, 0) solid; */
+    border: none;
+    height: 35px;
+    padding: 10px;
+    border-radius: 10px;
+}
+.input_fecha {
+    /* border: 2px green solid; */
+    width: 90%;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.input_fecha h5{
+    /* border: 2px green solid; */
+    color: white;
+    font-size: 25px;
+    font-family: "Marope-Regular";
+}
+.input_fecha input{
+    /* border: 2px rgb(0, 255, 255) solid; */
+    height: 35px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+}
+.input_categoria {
+    /* border: 2px rgb(0, 153, 255) solid; */
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 80px;
+    justify-content: space-between;
+}
+.input_categoria h5{
+    /* border: 2px rgb(0, 30, 255) solid; */
+    color: white;
+    font-size: 25px;
+    font-family: "Marope-Regular";
+}
+.input_categoria select{
+    /* border: 2px rgb(170, 0, 255) solid; */
+    height: 35px;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+}
+.input_categoria option{
+    /* border: 2px rgb(255, 0, 217) solid; */
+}
+.input_subcategoria {
+    /* border: 2px rgb(255, 0, 72) solid; */
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 80px;
+    justify-content: space-between;
+}
+.input_subcategoria h5{
+    /* border: 2px rgb(8, 72, 72) solid; */
+    color: white;
+    font-size: 25px;
+    font-family: "Marope-Regular";
+}
+.input_subcategoria select{
+    /* border: 2px rgb(128, 0, 98) solid; */
+    height: 35px;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+}
+.input_subcategoria option{
+    /* border: 2px rgb(146, 160, 39) solid; */
+}
+.input_imagen {
+    /* border: 2px rgb(255, 255, 255) solid; */
+    width: 90%;
+    height: 12%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+    align-items: flex-start;
+}
+
+.input_imagen h5 {
+    color: white;
+    font-size: 25px;
+    font-family: "Marope-Regular";
+}
+
+/* Caja del input file */
+.input_imagen input[type="file"] {
+    /* border: 2px rgb(241, 14, 14) solid; */
+    height: 55%;
+    padding: 5px;
+    color: white;
+    background: #2f2f2f;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+/* Botón interno (navegador moderno) */
+.input_imagen input[type="file"]::file-selector-button {
+    background: #ffffff;
+    border: 2px solid #4b4b4b;
+    padding: 5px 10px;
+    border-radius: 6px;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    transition: 0.3s;
+    height: 50px;
+    width: 50%;
+}
+
+/* Hover bonito */
+.input_imagen input[type="file"]::file-selector-button:hover {
+    background: #6c6c6c;
+    color: #ffffff;
+}
+.input_boton {
+    border:none;
+    width: 15%;
+    height: 5%;
+    border-radius: 10px;
+}
+.input_boton button {
+    border: none;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
