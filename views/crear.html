@@ -20,24 +20,25 @@
             <a href="../views/series.html">Series</a>
             <a href="../views/crear.html">Crear</a>
         </div>
-        <div class="opcion_notificacion">
-            <img src="../storage/img/lupita.svg" alt="">
-            <img src="../storage/img/campanita.svg" alt="">
+        <div class="infouser">
+            <img src="../storage/img/usuarionormal.png" alt="">
+            <p id="nombreUsuario"></p>
         </div>
     </header>
+
     <main class="caja_main">
         <div class="caja_principal">
             <div class="input_titulo">
                 <h5>Titulo de la Funcion</h5>
-                <input type="text" placeholder="Titulo de la Funcion">
+                <input type="text" id="titulo" placeholder="Titulo de la Funcion">
             </div>
             <div class="input_descripcion">
                 <h5>Descripcion de la Funcion</h5>
-                <input type="text" placeholder="Descripcion de la Funcion">
+                <input type="text" id="descripcion" placeholder="Descripcion de la Funcion">
             </div>
             <div class="input_fecha">
                 <h5>Fecha de la Funcion</h5>
-                <input type="date" placeholder="Fecha de la Funcion">
+                <input type="date" id="fecha" placeholder="Fecha de la Funcion">
             </div>
             <div class="input_categoria">
                 <h5 for="categoria">Selecciona una opcion:</h5>
@@ -58,13 +59,49 @@
             </div>
             <div class="input_imagen">
                 <h5>Imagen de la Funcion</h5>
-                <input type="file" id="fileInput">
+                <input type="text" id="imagen" placeholder="URL de la Imagen">
             </div>
             <div class="input_boton">
-                <button>Crear</button>
+                <button id="crearBtn">Crear</button>
             </div>
         </div>
     </main>
+
+    <script>
+        crearBtn.addEventListener('click', async (e) => {
+  e.preventDefault();
+
+  const titulo = document.getElementById('titulo').value;
+  const descripcion = document.getElementById('descripcion').value;
+  const anio = document.getElementById('fecha').value; // usa el name igual al backend
+  const tipo = document.getElementById('categoria').value;
+  const categoria = document.getElementById('categorias').value;
+  const img = document.getElementById('imagen').value;
+
+  if (!titulo || !descripcion || !anio || tipo === "Seleccionar" || categoria === "Seleccionar" || !img) {
+    alert('Por favor completa todos los campos.');
+    return;
+  }
+
+  try {
+    const res = await fetch('http://localhost:3000/api/v1/movies', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ titulo, descripcion, anio, tipo, categoria, img })
+    });
+
+    const newMovie = await res.json();
+    console.log('Película creada:', newMovie);
+
+    alert('Película creada exitosamente!');
+  } catch (err) {
+    console.error('Error creando la película:', err);
+    alert('Error al crear la película');
+  }
+});
+    </script>
 </body>
 
 </html>

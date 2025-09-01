@@ -1,27 +1,25 @@
-<!-- Pagina del login diseñada para que el usuario se pueda loguear-->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rank My Fandom</title>
     <link rel="stylesheet" href="../css/login.css">
-    <!-- logo de la pagina -->
     <link rel="icon" href="../storage/img/logo.png" type="image/png">
 </head>
-
 <body>
-    <!-- banner principal -->
     <div class="cajamain">
         <img src="../storage/img/bannerpelis2.png" class="banner-img" />
         <div class="cajainformation">
             <div class="textoylogo">
                 <img src="../storage/img/usuarionormal.png" alt="logo" />
                 <h1>Sign in</h1>
-                <input type="text" placeholder="Correo Electronico">
-                <input type="password" placeholder="Contraseña" >
-                <button>Inicia Sesion!</button>
+
+                <!-- Inputs con id -->
+                <input type="text" id="email" placeholder="Correo Electronico">
+                <input type="password" id="password" placeholder="Contraseña">
+                <button id="loginBtn">Inicia Sesion!</button>
+
                 <div>
                     <p>No tienes una cuenta? <a href="./createacount.html">Crea una!</a></p>
                     <p>Eres administrador? <a href="./loginadmin.html">Inicia aqui!</a></p>
@@ -29,6 +27,34 @@
             </div>
         </div>
     </div>
-</body>
 
+    <script>
+        const BASE_URL = "http://localhost:3000";
+
+        document.getElementById("loginBtn").onclick = () => {
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            // Para debug
+            console.log(email, password);
+
+            fetch(`${BASE_URL}/api/v1/auth/login`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email, password })
+            })
+            .then(res => res.json())
+            .then(data => {
+                if(data.token){
+                    localStorage.setItem("token", data.token);
+                    alert("Login exitoso ✅");
+                    window.location.href = "./principal.html"; // redirige al inicio
+                } else {
+                    alert(data.msg || "Usuario o contraseña incorrectos ❌");
+                }
+            })
+            .catch(err => console.error(err));
+        }
+    </script>
+</body>
 </html>

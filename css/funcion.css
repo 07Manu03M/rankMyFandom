@@ -1,0 +1,362 @@
+@import url(variables.css);
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #141414;
+}
+
+.menu_header {
+    /* border: 2px red solid; */
+    display: flex;
+    justify-content: space-around;
+    height: 60px;
+    padding: 10px;
+}
+
+.logotipado {
+    /* border: 2px rgb(255, 174, 0) solid; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logotipado img {
+    /* border: 2px rgb(145, 255, 0) solid; */
+    max-width: 30px;
+}
+
+.logotipado h1 {
+    /* border: 2px rgb(0, 255, 191) solid; */
+    font-family: "letra-righteous";
+    font-size: 20px;
+    color: white;
+}
+
+.opciones_menu {
+    border: 2px rgb(77, 77, 77) solid;
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 55px;
+    background: #0F0F0F;
+    border-radius: 15px;
+}
+
+.opciones_menu a {
+    font-family: "Marope-Regular";
+    width: 25%;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    text-decoration: none;
+}
+
+.opciones_menu a:nth-child(1) {
+    background: #242424;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.opcion_notificacion {
+    /* border: 2px rgb(153, 0, 255) solid; */
+    width: 6%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.opcion_notificacion img {
+    /* border: 2px rgb(255, 123, 0) solid; */
+    max-width: 40px;
+}
+
+main {
+    /* border: 2px blue solid; */
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    position: relative;
+}
+
+main img {
+    /* border: 2px red solid; */
+    max-width: 1150px;
+    display: flex;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    object-fit: cover;
+    z-index: 1;
+    /* 👈 asegura que la imagen quede detrás */
+    position: relative;
+}
+
+.descripcion {
+    /* border: 2px blue solid; */
+    position: absolute;
+    top: 4.5%;
+    /* la caja se pega al fondo de la imagen */
+    left: 12%;
+    width: 76%;
+    height: 95.5%;
+    padding: 20px;
+    background: linear-gradient(rgba(20, 20, 20, 0), rgba(20, 20, 20));
+    /* transparente */
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    color: white;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.descripcion p {
+    /* border: 2px red solid; */
+    width: 80%;
+}
+
+.descripcion button {
+    /* border: 2px green solid; */
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+/* INFORMACION */
+
+.caja_info {
+    border: 2px solid red;
+    position: relative;
+    top: 70%;
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.caja_info h1 {
+    border: 2px solid rgb(255, 157, 0);
+    font-family: "Manrope-Bold";
+    font-size: 45px;
+}
+
+.caja_info p {
+    border: 2px solid rgb(221, 255, 0);
+    font-family: "Marope-Medium";
+    font-size: 14px;
+    text-align: center;
+}
+
+.valoracion {
+    border: 2px solid rgb(47, 255, 0);
+    display: flex;
+    width: 40%;
+    justify-content: space-evenly;
+}
+
+.valoracion button {
+    border: 2px solid rgb(0, 255, 162);
+    font-family: "Manrope-Semibold";
+}
+
+.valoracion img {
+    border: 2px solid rgb(0, 132, 255);
+    min-width: 50px;
+}
+
+.caja_flechas {
+    /* border: 2px solid rgb(43, 0, 255); */
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+}
+
+.caja_flechas img {
+    /* border: 2px solid rgb(123, 0, 255); */
+}
+
+.caja_carrusel {
+    /* border: 2px solid rgb(255, 0, 238); */
+    display: flex;
+    width: 350px;
+    justify-content: center;
+}
+
+.caja_carrusel img {
+    /* border: 2px solid red; */
+}
+/* PELICULAS TENDENCIA */
+
+.top_tendencia {
+    border: 2px red solid;
+    margin-top: 50px;
+    padding: 20px;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    margin-left: 5%;
+}
+
+.top_tendencia h2 {
+    border: 2px rgb(0, 255, 38) solid;
+    color: white;
+    padding: 20px;
+    font-size: 35px;
+    font-family: "Manrope-Bold";
+}
+
+.comentarios {
+    border: 2px rgb(0, 255, 38) solid;
+    display: flex;
+    flex-direction: column;
+}
+.comentario1 {
+    border: 2px rgb(0, 200, 255) solid;
+    display: flex;
+    margin-bottom: 20px;
+    
+}
+.comentario1 img{
+    border: 2px rgb(0, 200, 255) solid;
+    max-width: 50px;
+}
+.comentario1 p{
+    border: 2px rgb(255, 0, 0) solid;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    font-family: "Marope-Regular";
+    font-family: "Manrope-Semibold";
+}
+.comentario1 strong{
+    border: 2px rgb(102, 0, 255) solid;
+}
+.comentario2 {
+    border: 2px rgb(204, 0, 255) solid;
+    display: flex;
+    margin-bottom: 20px;
+}
+.comentario2 img{
+    border: 2px rgb(204, 0, 255) solid;
+    max-width: 50px;
+}
+.comentario2 p{
+    border: 2px rgb(255, 0, 140) solid;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    font-family: "Marope-Regular";
+}
+.comentario2 strong{
+    border: 2px rgb(225, 255, 0) solid;
+    font-family: "Manrope-Semibold";
+}
+.comentario3 {
+    border: 2px rgb(255, 115, 0) solid;
+    display: flex;
+}
+.comentario3 img{
+    border: 2px rgb(255, 115, 0) solid;
+    max-width: 50px;
+}
+.comentario3 p{
+    border: 2px rgb(255, 0, 230) solid;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    font-family: "Marope-Regular";
+}
+.comentario3 strong{
+    border: 2px rgb(0, 234, 255) solid;
+    font-family: "Manrope-Semibold";
+}
+
+/* aaaa */
+
+.footer_section {
+    /* border: 2px seagreen solid; */
+    background: var(--color-body-);
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+.div_comment{
+    /* border: 2px seagreen solid; */
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.div_comment h2{
+    /* border: 2px blue solid; */
+    font-size: 30px;
+    color: white;
+}
+.div_comment .textarea {
+    /* border: 2px rgb(94, 155, 88) solid; */
+    padding: 10px;
+    border-radius: 10px;
+    height: 100px;
+    font-family: "Manrope-Semibold";
+    background: #2a2a2a;
+    width: 90%;
+    margin-left: 20px;
+}
+.botones {
+    /* border: 2px yellow solid; */
+    width: 30%;
+    height: 25px;
+    border-radius: 20px;
+    color: var(--letra-);
+    border: 2px solid var(--color-borde-);
+    font-family: "Manrope-Semibold";
+    margin-left: 20px;
+}
+.botones:hover{
+    background: #6f6f6f;
+    color: white;
+}
+.footer_section h3{
+    margin-top: 50px;
+    border-bottom: 1px solid #ccc;
+    /* border: 2px slateblue solid; */
+    
+}
+.ulsito {
+    border: 2px var(--color-body-) solid;
+    list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.comment-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+  padding: 8px 0;
+  color: var(--letra-);
+}
+
+.avatar-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: var(--letra-);
+}

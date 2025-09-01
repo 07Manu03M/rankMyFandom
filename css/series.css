@@ -75,6 +75,24 @@ body {
     /* border: 2px rgb(255, 123, 0) solid; */
     max-width: 40px;
 }
+.infouser{
+    /* border: 2px rgb(255, 123, 0) solid; */
+    width: 11%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.infouser img{
+    /* border: 2px rgb(0, 208, 255) solid; */
+    max-width: 30px;
+
+}
+.infouser p{
+    /* border: 2px rgb(255, 0, 242) solid; */
+    color: white;
+    font-family: "Marope-Regular";
+}
 
 main {
     /* border: 2px blue solid; */
