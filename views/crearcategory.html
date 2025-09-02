@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/crearcategory.css">
-    <title>Crear</title>
+    <title>Crear Categoría</title>
 </head>
 
 <body>
@@ -24,46 +24,67 @@
             <img src="../storage/img/campanita.svg" alt="">
         </div>
     </header>
+
     <main class="caja_main">
         <div class="caja_principal">
             <div class="input_titulo">
-                <h5>Titulo de la categoria</h5>
-                <input type="text" placeholder="Titulo de la categoria">
+                <h5>Titulo de la categoría</h5>
+                <input type="text" id="titulo" placeholder="Titulo de la categoría">
             </div>
             <div class="input_descripcion">
-                <h5>Descripcion de la categoria</h5>
-                <input type="text" placeholder="Descripcion de la categoria">
+                <h5>Descripción de la categoría</h5>
+                <input type="text" id="descripcion" placeholder="Descripción de la categoría">
             </div>
             <div class="input_fecha">
-                <h5>Fecha de creacion</h5>
-                <input type="date" placeholder="Fecha de creacion">
+                <h5>Fecha de creación</h5>
+                <input type="date" id="fecha" placeholder="Fecha de creación">
             </div>
-            <!-- <div class="input_categoria">
-                <h5 for="categoria">Selecciona una opcion:</h5>
-                <select id="categoria" name="categoria">
-                    <option value="Seleccionar">Seleccione una opcion</option>
-                    <option value="Pelicula">Pelicula</option>
-                    <option value="Serie">Serie</option>
-                </select>
-            </div>
-            <div class="input_subcategoria">
-                <h5 for="categorias">Seleccione una categoria</h5>
-                <select id="categorias" name="categorias">
-                    <option value="Seleccionar">Seleccione una opcion</option>
-                    <option value="Accion">Accion</option>
-                    <option value="Comedia">Comedia</option>
-                    <option value="Drama">Drama</option>
-                </select>
-            </div>
-            <div class="input_imagen">
-                <h5>Imagen de la Funcion</h5>
-                <input type="file" id="fileInput">
-            </div> -->
             <div class="input_boton">
-                <button>Crear</button>
+                <button id="crearCategoriaBtn">Crear</button>
             </div>
         </div>
     </main>
+
+    <script>
+        document.getElementById('crearCategoriaBtn').addEventListener('click', async (e) => {
+            e.preventDefault();
+
+            const titulo = document.getElementById('titulo').value;
+            const descripcion = document.getElementById('descripcion').value;
+            const fecha = document.getElementById('fecha').value;
+
+            if (!titulo || !descripcion || !fecha) {
+                alert('Por favor completa todos los campos.');
+                return;
+            }
+
+            try {
+                const res = await fetch('http://localhost:3000/api/v1/categories', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ titulo, descripcion, fecha })
+                });
+
+                if (!res.ok) {
+                    throw new Error('Error en la respuesta del servidor');
+                }
+
+                const newCategory = await res.json();
+                console.log('Categoría creada:', newCategory);
+
+                alert('Categoría creada exitosamente!');
+                // limpiar inputs
+                document.getElementById('titulo').value = '';
+                document.getElementById('descripcion').value = '';
+                document.getElementById('fecha').value = '';
+            } catch (err) {
+                console.error('Error creando la categoría:', err);
+                alert('Error al crear la categoría');
+            }
+        });
+    </script>
 </body>
 
 </html>

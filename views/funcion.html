@@ -1,69 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/funcion.css">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../css/funcion.css">
+<title>Función</title>
+<style>
+    /* CSS para el efecto de "votado" */
+    .valoracion img.votado {
+        filter: invert(45%) sepia(85%) saturate(600%) hue-rotate(180deg);
+    }
+</style>
 </head>
-
 <body>
-    <header class="menu_header">
-        <div>
-            <img src="../storage/img/retroceder.png" alt="">
-        </div>
-        <div class="logotipado">
-            <img src="../storage/img/logoprincipal.svg" alt="">
-            <h1>Rank My Fandom</h1>
-        </div>
-        <div class="opcion_notificacion">
-            <img src="../storage/img/lupita.svg" alt="">
-            <img src="../storage/img/campanita.svg" alt="">
-        </div>
-    </header>
-    <main>
-        <img class="banner" src="../storage/img/squid-game-banner (1).png" alt="">
-        <div class="descripcion">
-            <div class="caja_info">
-                <h1 class="titulo">Squid Game</h1>
-                <p class="texto">Un grupo de personas con deudas abrumadoras es llevado a un misterioso juego de
-                    supervivencia...</p>
-                <div class="valoracion">
-                    <img src="../storage/img/like.svg" alt="">
-                    <img src="../storage/img/dislike.svg" alt="">
-                </div>
-            </div>
-        </div>
-    </main>
-    <article class="top_tendencia">
-        <h2>Comentarios / Reseñas</h2>
+<header class="menu_header">
+    <div>
+        <img id="backBtn" src="../storage/img/retroceder.png" alt="">
+    </div>
+    <div class="logotipado">
+        <img src="../storage/img/logoprincipal.svg" alt="">
+        <h1>Rank My Fandom</h1>
+    </div>
+    <div class="opcion_notificacion">
+        <img src="../storage/img/lupita.svg" alt="">
+        <img src="../storage/img/campanita.svg" alt="">
+    </div>
+</header>
 
-        <footer class="footer_section" id="section_comentario">
-            <div class="div_comment">
-                <h2>Deja un comentario</h2>
-                <textarea class="textarea" id="commentInput" rows="3" cols="89"
-                    placeholder="Escribe tu comentario aquí..."></textarea>
-            </div>
-            <br>
-            <button class="botones" onclick="postComment()">Enviar comentario</button>
-        </footer>
-
-        <div class="comentarios">
-            <div class="comentario1">
-                <img src="../storage/img/usuarionormal.png" alt="">
-                <p><strong>Usuario1:</strong> ¡Increíble serie! No pude dejar de verla.</p>
-            </div>
-            <div class="comentario2">
-                <img src="../storage/img/usuarionormal.png" alt="">
-                <p><strong>Usuario2:</strong> La trama es muy interesante, pero el final me dejó confundido.</p>
-            </div>
-            <div class="comentario3">
-                <img src="../storage/img/usuarionormal.png" alt="">
-                <p><strong>Usuario3:</strong> Me encantó la actuación de los personajes principales.</p>
+<main>
+    <img class="banner" id="banner" src="" alt="">
+    <div class="descripcion">
+        <div class="caja_info">
+            <h1 class="titulo" id="titulo"></h1>
+            <p class="texto" id="descripcion"></p>
+            <div class="valoracion">
+                <img id="likeBtn" src="../storage/img/like.svg" alt="">
+                <p id="likesCount">0</p>
+                <img id="dislikeBtn" src="../storage/img/dislike.svg" alt="">
+                <p id="dislikesCount">0</p>
             </div>
         </div>
-    </article>
+    </div>
+</main>
+
+<article class="top_tendencia">
+<h2>Comentarios / Reseñas</h2>
+
+<footer class="footer_section" id="section_comentario">
+    <div class="div_comment">
+        <h2>Deja un comentario</h2>
+        <textarea class="textarea" id="commentInput" rows="3" cols="89"
+            placeholder="Escribe tu comentario aquí..."></textarea>
+    </div>
+    <br>
+    <button class="botones" onclick="postComment()">Enviar comentario</button>
+</footer>
+
+<div class="comentarios" id="comentariosContainer">
+</div>
+</article>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const movieId = params.get("id");
+
+const token = localStorage.getItem("token");
+let userId = null;
+let username = "Usuario Normal";
+
+if (token) {
+    try {
+        const payload = JSON.parse(atob(token.split('.')[1]));
+        userId = payload.id;
+        username = payload.username || "Usuario Normal";
+    } catch {
+        userId = "usuario123";
+    }
+} else {
+    userId = "usuario123";
+}
+
+async function cargarPelicula() {
+    try {
+        const res = await fetch(`http://localhost:3000/api/v1/movies/${movieId}`);
+        if (!res.ok) throw new Error("No se pudo cargar la película");
+        const movie = await res.json();
+
+        document.getElementById("banner").src = movie.banner || movie.img;
+        document.getElementById("banner").alt = movie.titulo;
+        document.getElementById("titulo").textContent = movie.titulo;
+        document.getElementById("descripcion").textContent = movie.descripcion;
+        document.getElementById("likesCount").textContent = movie.likes || 0;
+        document.getElementById("dislikesCount").textContent = movie.dislikes || 0;
+
+        const likeBtn = document.getElementById("likeBtn");
+        const dislikeBtn = document.getElementById("dislikeBtn");
+
+        if (movie.usersLiked?.some(u => u.id === userId)) likeBtn.classList.add("votado");
+        if (movie.usersDisliked?.some(u => u.id === userId)) dislikeBtn.classList.add("votado");
+
+        likeBtn.addEventListener("click", async () => votar(movieId, "like", likeBtn, dislikeBtn));
+        dislikeBtn.addEventListener("click", async () => votar(movieId, "dislike", dislikeBtn, likeBtn));
+
+        await cargarComentarios();
+    } catch (err) {
+        console.error(err);
+        alert("Error cargando la película");
+    }
+}
+
+async function cargarComentarios() {
+    try {
+        const res = await fetch(`http://localhost:3000/api/v1/reviews/movie/${movieId}`);
+        if (!res.ok) throw new Error("No se pudieron cargar los comentarios");
+        const reviews = await res.json();
+
+        const comentariosContainer = document.getElementById("comentariosContainer");
+        comentariosContainer.innerHTML = "";
+
+        reviews.forEach((c, i) => {
+            const div = document.createElement("div");
+            div.classList.add(`comentario${i+1}`);
+            div.innerHTML = `
+                <img src="../storage/img/usuarionormal.png" alt="">
+                <p><strong>${c.username}:</strong> ${c.comment}</p>
+            `;
+            comentariosContainer.appendChild(div);
+        });
+    } catch (err) {
+        console.error(err);
+        alert("Error cargando los comentarios");
+    }
+}
+
+async function postComment() {
+    const comment = document.getElementById("commentInput").value.trim();
+    if (!comment) { alert("Escribe un comentario"); return; }
+
+    try {
+        const res = await fetch("http://localhost:3000/api/v1/reviews", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ userId, username, movieId, comment })
+        });
+        if (!res.ok) throw new Error("No se pudo publicar el comentario");
+
+        document.getElementById("commentInput").value = "";
+        await cargarComentarios();
+    } catch (err) {
+        console.error(err);
+        alert("Error al publicar comentario");
+    }
+}
+
+async function votar(movieId, action, btnPrincipal, btnOpuesto) {
+    try {
+        const res = await fetch(`http://localhost:3000/api/v1/movies/${movieId}/vote`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ userId, username, action })
+        });
+        const data = await res.json();
+        if (!res.ok) { alert(data.message); return; }
+
+        document.getElementById("likesCount").textContent = data.likes;
+        document.getElementById("dislikesCount").textContent = data.dislikes;
+
+        btnPrincipal.classList.add("votado");
+        btnOpuesto.classList.remove("votado");
+    } catch (err) {
+        console.error("Error votando:", err);
+    }
+}
+
+document.getElementById("backBtn").addEventListener("click", () => window.history.back());
+window.addEventListener("DOMContentLoaded", cargarPelicula);
+</script>
 </body>
-
 </html>
+

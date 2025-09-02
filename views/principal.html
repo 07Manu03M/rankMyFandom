@@ -1,1391 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/principal.css">
-    <title>Home</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/principal.css">
+  <title>Home</title>
 </head>
-
 <body>
-    <header class="menu_header">
-        <div class="logotipado">
-            <img src="../storage/img/logoprincipal.svg" alt="">
-            <h1>Rank My Fandom</h1>
+  <header class="menu_header">
+    <div class="logotipado">
+      <img src="../storage/img/logoprincipal.svg" alt="">
+      <h1>Rank My Fandom</h1>
+    </div>
+    <div class="opciones_menu">
+      <a href="../views/principal.html">Home</a>
+      <a href="../views/peliculas.html">Peliculas</a>
+      <a href="../views/series.html">Series</a>
+      <a href="../views/crear.html">Crear</a>
+    </div>
+    <div class="infouser">
+      <img src="../storage/img/usuarionormal.png" alt="">
+      <p id="usernameDisplay">Usuario Normal</p>
+    </div>
+  </header>
+
+  <main class="cajitamain">
+    <img class="banner" src="" alt="">
+    <div class="descripcion">
+      <div class="caja_info">
+        <h1 class="titulo"></h1>
+        <p class="texto"></p>
+        <div class="valoracion">
+          <button id="verMas">Ver más</button>
+          <img src="../storage/img/like.svg" alt="">
+          <img src="../storage/img/dislike.svg" alt="">
         </div>
-        <div class="opciones_menu">
-            <a href="../views/principal.html">Home</a>
-            <a href="../views/peliculas.html">Peliculas</a>
-            <a href="../views/series.html">Series</a>
-            <a href="../views/crear.html">Crear</a>
+        <div class="caja_flechas">
+          <img class="flecha izquierda" src="../storage/img/flechaizquierda.svg" alt="">
+          <div class="caja_carrusel" id="indicadoresContainer"></div>
+          <img class="flecha derecha" src="../storage/img/flechaderecha.svg" alt="">
         </div>
-        <div class="infouser">
-            <img src="../storage/img/usuarionormal.png" alt="">
-            <p>Usuario Normal</p>
-        </div>
-    </header>
-    <main>
-        <img class="banner" src="../storage/img/squid-game-banner (1).png" alt="">
-        <div class="descripcion">
-            <div class="caja_info">
-                <h1 class="titulo">Squid Game</h1>
-                <p class="texto">Un grupo de personas con deudas abrumadoras es llevado a un misterioso juego de
-                    supervivencia...</p>
-                <div class="valoracion">
-                    <button>Ver más</button>
-                    <img src="../storage/img/like.svg" alt="">
-                    <img src="../storage/img/dislike.svg" alt="">
-                </div>
-                <div class="caja_flechas">
-                    <img class="flecha izquierda" src="../storage/img/flechaizquierda.svg" alt="">
-                    <div class="caja_carrusel">
-                        <img class="indicador" src="../storage/img/rayallena.svg" alt="">
-                        <img class="indicador" src="../storage/img/rayavacia.svg" alt="">
-                        <img class="indicador" src="../storage/img/rayavacia.svg" alt="">
-                        <img class="indicador" src="../storage/img/rayavacia.svg" alt="">
-                    </div>
-                    <img class="flecha derecha" src="../storage/img/flechaderecha.svg" alt="">
-                </div>
-            </div>
-        </div>
-    </main>
-    <article class="top_tendencia">
-        <h2>Tendencias actuales</h2>
+      </div>
+    </div>
+  </main>
 
-        <div class="carrusel">
-            <button class="flecha izquierda">&#10094;</button>
+  <!-- Secciones dinámicas -->
+  <article class="top_tendencia" id="masFamosos"></article>
+  <article class="top_tendencia" id="masOdiados"></article>
+  <article class="top_tendencia" id="buenasCriticas"></article>
+  <article class="top_tendencia" id="malasCriticas"></article>
 
-            <div class="categorizacion">
-                <!-- Cada tarjeta -->
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/Destino final.png" alt="">
-                        <div class="top"><span>1</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/minecraftmovie.png" alt="">
-                        <div class="top"><span>2</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/knypelicula.png" alt="">
-                        <div class="top"><span>3</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/kingtheland.png" alt="">
-                        <div class="top"><span>4</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/sonatadeinvierno.png" alt="">
-                        <div class="top"><span>5</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/bettylafea.png" alt="">
-                        <div class="top"><span>6</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/merlina.png" alt="">
-                        <div class="top"><span>7</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/barbie.png" alt="">
-                        <div class="top"><span>8</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/gumball.png" alt="">
-                        <div class="top"><span>9</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/escaleraalcielo.png" alt="">
-                        <div class="top"><span>10</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <button class="flecha derecha">&#10095;</button>
-        </div>
-    </article>
-    <article class="top_tendencia">
-        <h2>Aclamadas por la critica</h2>
-
-        <div class="carrusel">
-            <button class="flecha izquierda">&#10094;</button>
-
-            <div class="categorizacion">
-                <!-- Cada tarjeta -->
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/Destino final.png" alt="">
-                        <div class="top"><span>1</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/minecraftmovie.png" alt="">
-                        <div class="top"><span>2</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/knypelicula.png" alt="">
-                        <div class="top"><span>3</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/kingtheland.png" alt="">
-                        <div class="top"><span>4</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/sonatadeinvierno.png" alt="">
-                        <div class="top"><span>5</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/bettylafea.png" alt="">
-                        <div class="top"><span>6</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/merlina.png" alt="">
-                        <div class="top"><span>7</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/barbie.png" alt="">
-                        <div class="top"><span>8</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/gumball.png" alt="">
-                        <div class="top"><span>9</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/escaleraalcielo.png" alt="">
-                        <div class="top"><span>10</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <button class="flecha derecha">&#10095;</button>
-        </div>
-    </article>
-    <article class="top_tendencia">
-        <h2>Peliculas mas reconocidas</h2>
-
-        <div class="carrusel">
-            <button class="flecha izquierda">&#10094;</button>
-
-            <div class="categorizacion">
-                <!-- Cada tarjeta -->
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/Destino final.png" alt="">
-                        <div class="top"><span>1</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/minecraftmovie.png" alt="">
-                        <div class="top"><span>2</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/knypelicula.png" alt="">
-                        <div class="top"><span>3</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/kingtheland.png" alt="">
-                        <div class="top"><span>4</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/sonatadeinvierno.png" alt="">
-                        <div class="top"><span>5</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/bettylafea.png" alt="">
-                        <div class="top"><span>6</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/merlina.png" alt="">
-                        <div class="top"><span>7</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/barbie.png" alt="">
-                        <div class="top"><span>8</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/gumball.png" alt="">
-                        <div class="top"><span>9</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/escaleraalcielo.png" alt="">
-                        <div class="top"><span>10</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <button class="flecha derecha">&#10095;</button>
-        </div>
-    </article>
-    <article class="top_tendencia">
-        <h2>Series mas reconocidas</h2>
-
-        <div class="carrusel">
-            <button class="flecha izquierda">&#10094;</button>
-
-            <div class="categorizacion">
-                <!-- Cada tarjeta -->
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/Destino final.png" alt="">
-                        <div class="top"><span>1</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/minecraftmovie.png" alt="">
-                        <div class="top"><span>2</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/knypelicula.png" alt="">
-                        <div class="top"><span>3</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/kingtheland.png" alt="">
-                        <div class="top"><span>4</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/sonatadeinvierno.png" alt="">
-                        <div class="top"><span>5</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/bettylafea.png" alt="">
-                        <div class="top"><span>6</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/merlina.png" alt="">
-                        <div class="top"><span>7</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/barbie.png" alt="">
-                        <div class="top"><span>8</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/gumball.png" alt="">
-                        <div class="top"><span>9</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/escaleraalcielo.png" alt="">
-                        <div class="top"><span>10</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <button class="flecha derecha">&#10095;</button>
-        </div>
-    </article>
-    <article class="top_tendencia">
-        <h2>Con mas comentarios</h2>
-
-        <div class="carrusel">
-            <button class="flecha izquierda">&#10094;</button>
-
-            <div class="categorizacion">
-                <!-- Cada tarjeta -->
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/Destino final.png" alt="">
-                        <div class="top"><span>1</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/minecraftmovie.png" alt="">
-                        <div class="top"><span>2</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/knypelicula.png" alt="">
-                        <div class="top"><span>3</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/kingtheland.png" alt="">
-                        <div class="top"><span>4</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/sonatadeinvierno.png" alt="">
-                        <div class="top"><span>5</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/bettylafea.png" alt="">
-                        <div class="top"><span>6</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/merlina.png" alt="">
-                        <div class="top"><span>7</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/barbie.png" alt="">
-                        <div class="top"><span>8</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/gumball.png" alt="">
-                        <div class="top"><span>9</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/escaleraalcielo.png" alt="">
-                        <div class="top"><span>10</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <button class="flecha derecha">&#10095;</button>
-        </div>
-    </article>
-    <article class="top_tendencia">
-        <h2>Con mas dislikes</h2>
-
-        <div class="carrusel">
-            <button class="flecha izquierda">&#10094;</button>
-
-            <div class="categorizacion">
-                <!-- Cada tarjeta -->
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/Destino final.png" alt="">
-                        <div class="top"><span>1</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/minecraftmovie.png" alt="">
-                        <div class="top"><span>2</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/knypelicula.png" alt="">
-                        <div class="top"><span>3</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/kingtheland.png" alt="">
-                        <div class="top"><span>4</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/sonatadeinvierno.png" alt="">
-                        <div class="top"><span>5</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/bettylafea.png" alt="">
-                        <div class="top"><span>6</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/merlina.png" alt="">
-                        <div class="top"><span>7</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/barbie.png" alt="">
-                        <div class="top"><span>8</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/gumball.png" alt="">
-                        <div class="top"><span>9</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="caja_tendencias">
-                    <div class="banner-peli">
-                        <img src="../storage/img/escaleraalcielo.png" alt="">
-                        <div class="top"><span>10</span></div>
-                    </div>
-                    <div class="info_peli">
-                        <div class="likes_dislikes">
-                            <div class="likes"><img src="../storage/img/like.svg">
-                                <p>500k</p>
-                            </div>
-                            <div class="dislikes"><img src="../storage/img/dislike.svg">
-                                <p>100k</p>
-                            </div>
-                        </div>
-                        <div class="comentarios"><img src="../storage/img/comentario.png">
-                            <p>100</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <button class="flecha derecha">&#10095;</button>
-        </div>
-    </article>
-</body>
 <script>
-    // seleccionamos cada carrusel completo
-    const carruseles = document.querySelectorAll(".carrusel");
+// ========================================
+// Token y usuario
+// ========================================
+const token = localStorage.getItem("token");
+let userId = null;
+let username = "Usuario Normal";
 
-    carruseles.forEach((carrusel) => {
-        const contenedor = carrusel.querySelector(".categorizacion");
-        const btnIzquierda = carrusel.querySelector(".flecha.izquierda");
-        const btnDerecha = carrusel.querySelector(".flecha.derecha");
-
-        btnDerecha.addEventListener("click", () => {
-            contenedor.scrollBy({ left: 300, behavior: "smooth" });
-        });
-
-        btnIzquierda.addEventListener("click", () => {
-            contenedor.scrollBy({ left: -300, behavior: "smooth" });
-        });
-    });
-</script>
-<script>
-const slides = [
-  {
-    img: "../storage/img/squid-game-banner (1).png",
-    titulo: "Squid Game",
-    texto: "Un grupo de personas con deudas es llevado a un misterioso juego de supervivencia, donde deben enfrentarse en versiones mortales de juegos infantiles para ganar una enorme fortuna… pero cada decisión, cada traición y cada sacrificio los acerca más a la verdad detrás de la máscara, y a la pregunta final: ¿vale la vida lo que cuesta el premio?"
-  },
-  {
-    img: "../storage/img/bannerdestinofinal.png",
-    titulo: "Destino Final",
-    texto: "Tras tener una visión de un accidente mortal, un joven logra salvarse junto a varios compañeros… pero la Muerte no acepta ser engañada, y uno a uno empiezan a caer en macabros sucesos, donde cada intento de escapar parece solo acercarlos más a su inevitable destino final."
-  },
-  {
-    img: "../storage/img/parasitebanner.png",
-    titulo: "Parasite",
-    texto: "Una familia pobre logra infiltrarse poco a poco en la vida de una familia adinerada, ocupando distintos empleos con astucia… pero la ilusión de prosperidad pronto se convierte en un juego peligroso, donde secretos ocultos, tensiones sociales y violencia inesperada revelan el verdadero costo de escalar en un mundo dividido."
-  },
-  {
-    img: "../storage/img/traintobusanbanner.png",
-    titulo: "Train to Busan",
-    texto: "Durante un viaje en tren hacia Busan, un brote de zombis se desata y los pasajeros quedan atrapados en un recorrido mortal… entre el caos, el miedo y los sacrificios, cada decisión pone a prueba la humanidad de los sobrevivientes, revelando que el mayor desafío no siempre son los muertos, sino lo que queda de los vivos."
+if (token) {
+  try {
+    const payload = JSON.parse(atob(token.split('.')[1]));
+    userId = payload.id;
+    username = payload.username || "Usuario Normal";
+    document.getElementById("usernameDisplay").textContent = username;
+  } catch(err) {
+    console.error(err);
+    userId = "usuario123";
   }
-];
+} else {
+  userId = "usuario123";
+}
 
-let index = 0;
+// ========================================
+// Cargar datos y mostrar secciones
+// ========================================
+async function cargarHome() {
+  try {
+    const res = await fetch("http://localhost:3000/api/v1/movies");
+    const items = await res.json();
 
-const banner = document.querySelector(".banner");
-const descripcion = document.querySelector(".descripcion"); // ✅ agregamos referencia a la caja difuminada
-const titulo = document.querySelector(".titulo");
-const texto = document.querySelector(".texto");
-const indicadores = document.querySelectorAll(".indicador");
+    // Ordenar por likes para top banner
+    const top4 = [...items].sort((a,b) => b.likes - a.likes).slice(0,4);
+    setupBanner(top4);
 
-const btnIzquierda = document.querySelector(".flecha.izquierda");
-const btnDerecha = document.querySelector(".flecha.derecha");
+    // 10 más famosos
+    mostrarSeccion("masFamosos", "10 Más Famosos", [...items].sort((a,b) => b.likes - a.likes).slice(0,10));
 
-function mostrarSlide(i) {
-  // Animación de salida
-  banner.classList.add("fade-out");
-  descripcion.classList.add("fade-out");  // ✅ animamos la caja difuminada
-  titulo.classList.add("fade-out");
-  texto.classList.add("fade-out");
+    // 10 más odiados
+    mostrarSeccion("masOdiados", "10 Más Odiados", [...items].sort((a,b) => b.dislikes - a.dislikes).slice(0,10));
 
-  setTimeout(() => {
-    // Cambiamos el contenido
-    banner.src = slides[i].img;
-    titulo.textContent = slides[i].titulo;
-    texto.textContent = slides[i].texto;
+    // Buenas críticas (más comentarios)
+    mostrarSeccion("buenasCriticas", "Buenas Críticas", [...items].sort((a,b) => b.comentarios - a.comentarios).slice(0,10));
 
-    // Actualizamos indicadores
-    indicadores.forEach((ind, idx) => {
-      ind.src = idx === i ? "../storage/img/rayallena.svg" : "../storage/img/rayavacia.svg";
+    // Malas críticas (menos comentarios)
+    mostrarSeccion("malasCriticas", "Aclamados Mal por la Crítica", [...items].sort((a,b) => a.comentarios - b.comentarios).slice(0,10));
+
+  } catch(err) {
+    console.error("Error cargando datos:", err);
+  }
+}
+
+// ========================================
+// Banner principal
+// ========================================
+let bannerIndex = 0;
+let slides = [];
+
+function setupBanner(items) {
+  slides = items;
+  const bannerImg = document.querySelector(".banner");
+  const titulo = document.querySelector(".titulo");
+  const texto = document.querySelector(".texto");
+  const indicadoresContainer = document.getElementById("indicadoresContainer");
+
+  indicadoresContainer.innerHTML = "";
+  items.forEach((item, idx) => {
+    const indicador = document.createElement("img");
+    indicador.classList.add("indicador");
+    indicador.src = idx===0 ? "../storage/img/rayallena.svg" : "../storage/img/rayavacia.svg";
+    indicador.addEventListener("click", () => {
+      bannerIndex = idx;
+      mostrarSlide();
     });
+    indicadoresContainer.appendChild(indicador);
+  });
 
-    // Animación de entrada
-    banner.classList.remove("fade-out");
-    descripcion.classList.remove("fade-out"); // ✅
-    titulo.classList.remove("fade-out");
-    texto.classList.remove("fade-out");
+  function mostrarSlide() {
+    const item = slides[bannerIndex];
+    bannerImg.src = item.banner;
+    titulo.textContent = item.titulo;
+    texto.textContent = item.descripcion;
+    document.getElementById("verMas").onclick = () => {
+      window.location.href = `../views/funcion.html?id=${item._id}`;
+    };
+    const indicadores = document.querySelectorAll(".indicador");
+    indicadores.forEach((ind, idx) => {
+      ind.src = idx===bannerIndex ? "../storage/img/rayallena.svg" : "../storage/img/rayavacia.svg";
+    });
+  }
 
-    banner.classList.add("fade-in");
-    descripcion.classList.add("fade-in"); // ✅
-    titulo.classList.add("fade-in");
-    texto.classList.add("fade-in");
+  document.querySelector(".flecha.derecha").addEventListener("click", () => {
+    bannerIndex = (bannerIndex+1)%slides.length;
+    mostrarSlide();
+  });
+  document.querySelector(".flecha.izquierda").addEventListener("click", () => {
+    bannerIndex = (bannerIndex-1+slides.length)%slides.length;
+    mostrarSlide();
+  });
 
-    setTimeout(() => {
-      banner.classList.remove("fade-in");
-      descripcion.classList.remove("fade-in"); // ✅
-      titulo.classList.remove("fade-in");
-      texto.classList.remove("fade-in");
-    }, 600);
-
-  }, 600); // duración del fade-out
+  mostrarSlide();
+  setInterval(()=>{ bannerIndex=(bannerIndex+1)%slides.length; mostrarSlide(); }, 20000);
 }
 
-function siguiente() {
-  index = (index + 1) % slides.length;
-  mostrarSlide(index);
+// ========================================
+// Mostrar secciones tipo carrusel
+// ========================================
+function mostrarSeccion(idSeccion, tituloSeccion, items) {
+  const contenedor = document.getElementById(idSeccion);
+  contenedor.innerHTML = `<h2>${tituloSeccion}</h2>
+    <div class="carrusel">
+      <button class="flecha izquierda">&#10094;</button>
+      <div class="categorizacion"></div>
+      <button class="flecha derecha">&#10095;</button>
+    </div>`;
+  const categorizacion = contenedor.querySelector(".categorizacion");
+
+  items.forEach(item => {
+    const likedNames = (item.usersLiked || []).map(u => u.nombre).join(", ");
+    const dislikedNames = (item.usersDisliked || []).map(u => u.nombre).join(", ");
+    const card = document.createElement("div");
+    card.classList.add("caja_tendencias");
+    card.innerHTML = `
+      <div class="banner-peli">
+        <img src="${item.img}" alt="${item.titulo}">
+      </div>
+      <div class="info_peli">
+        <div class="likes_dislikes">
+          <div class="likes" title="${likedNames}">
+            <img src="../storage/img/like.svg">
+            <p>${item.likes}</p>
+          </div>
+          <div class="dislikes" title="${dislikedNames}">
+            <img src="../storage/img/dislike.svg">
+            <p>${item.dislikes}</p>
+          </div>
+        </div>
+        <div class="comentarios">
+          <img src="../storage/img/comentario.png">
+          <p>${item.comentarios}</p>
+        </div>
+      </div>`;
+    card.addEventListener("click", () => {
+      window.location.href = `../views/funcion.html?id=${item._id}`;
+    });
+    categorizacion.appendChild(card);
+  });
+
+  // Flechas
+  const btnIzq = contenedor.querySelector(".flecha.izquierda");
+  const btnDer = contenedor.querySelector(".flecha.derecha");
+  btnDer.addEventListener("click", ()=>categorizacion.scrollBy({ left: 300, behavior: "smooth" }));
+  btnIzq.addEventListener("click", ()=>categorizacion.scrollBy({ left: -300, behavior: "smooth" }));
 }
 
-function anterior() {
-  index = (index - 1 + slides.length) % slides.length;
-  mostrarSlide(index);
-}
-
-btnDerecha.addEventListener("click", siguiente);
-btnIzquierda.addEventListener("click", anterior);
-
-// Auto cambio cada 5s
-setInterval(siguiente, 20000);
-
-// mostrar primero
-mostrarSlide(index);
+document.addEventListener("DOMContentLoaded", cargarHome);
 </script>
 
-
+</body>
 </html>

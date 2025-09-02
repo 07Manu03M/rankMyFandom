@@ -77,15 +77,16 @@ body {
 }
 .infouser{
     /* border: 2px rgb(255, 123, 0) solid; */
-    width: 11%;
+    width: 13%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    justify-content: center;
 
 }
 .infouser img{
     /* border: 2px rgb(0, 208, 255) solid; */
-    max-width: 30px;
+    max-width: 30px;margin-right: 10px;
 
 }
 .infouser p{
@@ -95,9 +96,10 @@ body {
 }
 
 main {
-    /* border: 2px blue solid; */
+    border: 2px blue solid;
     height: 90vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: end;
     position: relative;
@@ -224,9 +226,10 @@ main img {
     /* border: 2px red solid; */
     margin-top: 50px;
     padding: 20px;
-    height: 70vh;
+    height: 75vh;
     display: flex;
     flex-direction: column;
+    width: 95%;
 }
 
 .top_tendencia h2 {
@@ -242,7 +245,7 @@ main img {
   position: relative;
   overflow: hidden;
   padding: 0 60px; /* espacio para las flechas */
-  height: 365px;
+  height: 100%;
 }
 
 .categorizacion {
@@ -252,7 +255,7 @@ main img {
   overflow-x: auto;       /* 👈 scroll horizontal */
   scroll-behavior: smooth;
   scrollbar-width: none;  /* Firefox */
-  height: 360px;
+  height: 100%;
 }
 .categorizacion::-webkit-scrollbar {
     /* border: 2px rgb(17, 0, 255) solid; */
@@ -282,13 +285,17 @@ main img {
     background: #2f2f2f;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    width: 100%;
+    height: 100%;
 }
 
 .banner-peli img {
     /* border: 2px rgb(98, 255, 0) solid; */
     width: 100%;
+    height: 100%;
     display: block;
     border-radius: 10px;
+    object-fit: cover;
 }
 
 .top {
@@ -418,4 +425,10 @@ main img {
   opacity: 1;
   transform: translateX(0);
 }
+
+.likes.votado img,
+.dislikes.votado img {
+    filter: invert(45%) sepia(85%) saturate(600%) hue-rotate(180deg); /* relleno azul ejemplo */
+}
+
 

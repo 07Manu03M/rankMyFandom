@@ -206,9 +206,10 @@ main img {
     /* border: 2px red solid; */
     margin-top: 50px;
     padding: 20px;
-    height: 70vh;
+    height: 75vh;
     display: flex;
     flex-direction: column;
+    width: 95%;
 }
 
 .top_tendencia h2 {
@@ -224,7 +225,7 @@ main img {
   position: relative;
   overflow: hidden;
   padding: 0 60px; /* espacio para las flechas */
-  height: 365px;
+  height: 100%;
 }
 
 .categorizacion {
@@ -234,7 +235,7 @@ main img {
   overflow-x: auto;       /* 👈 scroll horizontal */
   scroll-behavior: smooth;
   scrollbar-width: none;  /* Firefox */
-  height: 360px;
+  height: 100%;
 }
 .categorizacion::-webkit-scrollbar {
     /* border: 2px rgb(17, 0, 255) solid; */
@@ -250,6 +251,9 @@ main img {
   background:#222;
   transition: transform .25s ease;
 }
+.caja_tendencias:hover {
+  transform: scale(1.05);
+}
 
 .banner-peli {
     /* border: 2px rgb(255, 255, 0) solid; */
@@ -261,13 +265,17 @@ main img {
     background: #2f2f2f;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    width: 100%;
+    height: 100%;
 }
 
 .banner-peli img {
     /* border: 2px rgb(98, 255, 0) solid; */
     width: 100%;
+    height: 100%;
     display: block;
     border-radius: 10px;
+    object-fit: cover;
 }
 
 .top {
@@ -392,3 +400,34 @@ main img {
   opacity: 1;
   transform: translateX(0);
 }
+
+/* TOAST ANIMADO */
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #4caf50; /* verde por defecto */
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.5s ease;
+  z-index: 9999;
+  font-family: "Manrope-Bold", sans-serif;
+  pointer-events: none;
+}
+
+/* Mostrar toast */
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Colores por tipo */
+.toast.success { background-color: #4caf50; } /* verde */
+.toast.error { background-color: #f44336; }   /* rojo */
+.toast.info { background-color: #2196f3; }    /* azul */
+.toast.warning { background-color: #ff9800; } /* naranja */
+

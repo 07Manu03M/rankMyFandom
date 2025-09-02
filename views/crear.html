@@ -29,37 +29,41 @@
     <main class="caja_main">
         <div class="caja_principal">
             <div class="input_titulo">
-                <h5>Titulo de la Funcion</h5>
-                <input type="text" id="titulo" placeholder="Titulo de la Funcion">
+                <h5>Título de la Función</h5>
+                <input type="text" id="titulo" placeholder="Título de la Función">
             </div>
             <div class="input_descripcion">
-                <h5>Descripcion de la Funcion</h5>
-                <input type="text" id="descripcion" placeholder="Descripcion de la Funcion">
+                <h5>Descripción de la Función</h5>
+                <input type="text" id="descripcion" placeholder="Descripción de la Función">
             </div>
             <div class="input_fecha">
-                <h5>Fecha de la Funcion</h5>
-                <input type="date" id="fecha" placeholder="Fecha de la Funcion">
+                <h5>Fecha de la Función</h5>
+                <input type="date" id="fecha" placeholder="Fecha de la Función">
             </div>
             <div class="input_categoria">
-                <h5 for="categoria">Selecciona una opcion:</h5>
+                <h5>Selecciona un tipo:</h5>
                 <select id="categoria" name="categoria">
-                    <option value="Seleccionar">Seleccione una opcion</option>
+                    <option value="Seleccionar">Seleccione una opción</option>
                     <option value="Pelicula">Pelicula</option>
                     <option value="Serie">Serie</option>
                 </select>
             </div>
             <div class="input_subcategoria">
-                <h5 for="categorias">Seleccione una categoria</h5>
+                <h5>Seleccione una categoría</h5>
                 <select id="categorias" name="categorias">
-                    <option value="Seleccionar">Seleccione una opcion</option>
+                    <option value="Seleccionar">Seleccione una opción</option>
                     <option value="Accion">Accion</option>
                     <option value="Comedia">Comedia</option>
                     <option value="Drama">Drama</option>
                 </select>
             </div>
             <div class="input_imagen">
-                <h5>Imagen de la Funcion</h5>
-                <input type="text" id="imagen" placeholder="URL de la Imagen">
+                <h5>Imagen de la Función</h5>
+                <input type="text" id="img" placeholder="URL de la Imagen">
+            </div>
+            <div class="input_imagen">
+                <h5>Banner de la Función</h5>
+                <input type="text" id="banner" placeholder="URL del Banner">
             </div>
             <div class="input_boton">
                 <button id="crearBtn">Crear</button>
@@ -68,40 +72,79 @@
     </main>
 
     <script>
+        // Cargar categorías dinámicamente
+        async function cargarCategorias() {
+            try {
+                const res = await fetch('http://localhost:3000/api/v1/categories');
+                const categorias = await res.json();
+
+                const selectCategoria = document.getElementById('categorias');
+                selectCategoria.innerHTML = '<option value="Seleccionar">Seleccione una opción</option>';
+
+                categorias.forEach(cat => {
+                    const option = document.createElement('option');
+                    option.value = cat.titulo;
+                    option.textContent = cat.titulo;
+                    selectCategoria.appendChild(option);
+                });
+            } catch (err) {
+                console.error('Error cargando categorías:', err);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', cargarCategorias);
+
+        // Crear película
+        const crearBtn = document.getElementById('crearBtn');
         crearBtn.addEventListener('click', async (e) => {
-  e.preventDefault();
+            e.preventDefault();
 
-  const titulo = document.getElementById('titulo').value;
-  const descripcion = document.getElementById('descripcion').value;
-  const anio = document.getElementById('fecha').value; // usa el name igual al backend
-  const tipo = document.getElementById('categoria').value;
-  const categoria = document.getElementById('categorias').value;
-  const img = document.getElementById('imagen').value;
+            const titulo = document.getElementById('titulo').value;
+            const descripcion = document.getElementById('descripcion').value;
+            const anio = document.getElementById('fecha').value;
+            const tipo = document.getElementById('categoria').value;
+            const categoria = document.getElementById('categorias').value;
+            const img = document.getElementById('img').value;
+            const banner = document.getElementById('banner').value;
 
-  if (!titulo || !descripcion || !anio || tipo === "Seleccionar" || categoria === "Seleccionar" || !img) {
-    alert('Por favor completa todos los campos.');
-    return;
-  }
+            if (!titulo || !descripcion || !anio || tipo === "Seleccionar" || categoria === "Seleccionar" || !img || !banner) {
+                alert('Por favor completa todos los campos.');
+                return;
+            }
 
-  try {
-    const res = await fetch('http://localhost:3000/api/v1/movies', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ titulo, descripcion, anio, tipo, categoria, img })
-    });
+            try {
+                const res = await fetch('http://localhost:3000/api/v1/movies', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ titulo, descripcion, anio, tipo, categoria, img, banner })
+                });
 
-    const newMovie = await res.json();
-    console.log('Película creada:', newMovie);
+                const newMovie = await res.json();
+                console.log('Película creada:', newMovie);
 
-    alert('Película creada exitosamente!');
-  } catch (err) {
-    console.error('Error creando la película:', err);
-    alert('Error al crear la película');
-  }
-});
+                if (res.ok) {
+                    alert('Película creada exitosamente!');
+                    // Limpiar campos
+                    document.getElementById('titulo').value = '';
+                    document.getElementById('descripcion').value = '';
+                    document.getElementById('fecha').value = '';
+                    document.getElementById('categoria').value = 'Seleccionar';
+                    document.getElementById('categorias').value = 'Seleccionar';
+                    document.getElementById('img').value = '';
+                    document.getElementById('banner').value = '';
+                } else {
+                    alert('Error al crear la película: ' + (newMovie.error || 'Error interno del servidor'));
+                }
+
+            } catch (err) {
+                console.error('Error creando la película:', err);
+                alert('Error al crear la película');
+            }
+        });
     </script>
 </body>
 
 </html>
+
