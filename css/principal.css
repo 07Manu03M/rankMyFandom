@@ -106,7 +106,7 @@ main {
 
 .banner {
     /* border: 2px red solid; */
-    min-width: 1150px;
+    max-width: 1150px;
     display: flex;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
